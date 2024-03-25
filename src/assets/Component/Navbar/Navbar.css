@@ -1,0 +1,13 @@
+.reviewText {
+    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+ul.menu.menu-horizontal a {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
