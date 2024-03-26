@@ -6,6 +6,7 @@ import "./Navbar.css";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState("light");
 
@@ -89,7 +90,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar shadow-lg">
+      <div className="navbar shadow-lg bg-slate-400">
         <div className="navbar-start">
           <div className="dropdown text-2xl ml-2 ">
             <div
