@@ -13,8 +13,8 @@ const BooksPage = () => {
       .then((data) => setBooks(data));
   }, []);
 
-  console.log(books, "from useState");
-  console.log(initialBooks, "initial books");
+  // console.log(books, "from useState");
+  // console.log(initialBooks, "initial books");
 
   const handleBookLength = () => {
     setInitialBooks(books.length);
@@ -22,6 +22,11 @@ const BooksPage = () => {
 
   return (
     <div className="my-10">
+      
+      <div>
+        <h1 className=" text-3xl md:text-5xl font-bold text-center my-10 "> My Books </h1>
+      </div>
+
       <div className="md:grid grid-cols-3 gap-5">
         {books?.slice(0, initialBooks).map((book, idx) => (
           <BookCard key={idx} book={book}>

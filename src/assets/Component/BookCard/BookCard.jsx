@@ -7,16 +7,16 @@ const BookCard = ({ book }) => {
   return (
     <div>
       <div>
-        <div className="card bg-base-100 shadow-xl p-10 border border-gray-400">
+        <div className="card bg-base-100 shadow-xl md:p-10 p-3 border border-gray-400 my-3 ">
           <figure>
-            <Link  > 
+            <Link to= {`/books/${bookId}`} > 
             <img
               src={image}
               alt="Book"
             />
             </Link>
           </figure>
-          <div className="card-body">
+          <div className="card-body p-3 ">
             <div className="flex justify-around" >
                 <p className="bg-gray-200 mx-2 rounded-full text-center text-[#23BE0A] " > {tags[0] } </p>
                 <p className="bg-gray-200 mx-2 rounded-full text-center text-[#23BE0A] " > {tags[1]} </p>

@@ -49,8 +49,8 @@ const router = createBrowserRouter([
         element: <Contact> </Contact>,
       },
       {
-        path:'./listedBooks/:bookdetails',
-        loader : () => fetch('https://raw.githubusercontent.com/developerMohib/Book-Review-JSON-Data-A8/master/Json-For-Book-Data') ,
+        path:'/books/:bookId',
+        // loader: () => fetch('https://raw.githubusercontent.com/developerMohib/Book-Review-JSON-Data-A8/master/Json-For-Book-Data') ,
         element: <BookDetails> </BookDetails>
       }
     ],

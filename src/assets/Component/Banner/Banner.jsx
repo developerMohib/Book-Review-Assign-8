@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 
 const Banner = () => {
 
@@ -16,7 +17,9 @@ const Banner = () => {
                 assumenda excepturi exercitationem quasi. In deleniti eaque aut
                 repudiandae et a id nisi.
               </p>
+              <NavLink to="./listedBooks"> 
               <button className="btn btn-primary bg-[#23BE0A] text-white border-none"> View the list </button>
+              </NavLink>
             </div>
           </div>
         </div>
