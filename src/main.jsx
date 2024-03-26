@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/books/:bookId',
-        // loader: () => fetch('https://raw.githubusercontent.com/developerMohib/Book-Review-JSON-Data-A8/master/Json-For-Book-Data') ,
+        loader: () => fetch('/books.json') ,
         element: <BookDetails> </BookDetails>
       }
     ],

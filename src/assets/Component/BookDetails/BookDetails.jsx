@@ -1,60 +1,63 @@
-// import { useLoaderData } from "react-router-dom";
-
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import './BookDetails.css'
 
 const BookDetails = () => {
-    const [allBooks, setAllBooks] = useState([]);
-    const [findBook, setFindBook] = useState(  )
-    // const bookLoader = useLoaderData(  );
-    const bookId = useParams();
-    const id = bookId.bookId ;
 
-    console.log(id, 'how it typeOf ');
-    console.log(allBooks, 'aalllaall ')
-    
-    useEffect(()=> {
-        fetch('https://raw.githubusercontent.com/developerMohib/Book-Review-JSON-Data-A8/master/Json-For-Book-Data')
-        .then(res => res.json())
-        .then(data => setAllBooks(data))
-    },[])
+  const bookLoader = useLoaderData();
+  const { bookId } = useParams();
 
-    useEffect(()=>{
-        const booksID = parseInt(id)
-        console.log(booksID);
-        if(allBooks.length > 0){
-            const findBooks = allBooks?.find(book => (book.bookId) === booksID );
-            setFindBook(findBooks);
-        }
-    } ,[allBooks,id])
-    
-    console.log(findBook, ' f array');
+  const book = bookLoader?.find((book) => book.bookId == bookId);
 
-    return (
-        <div>
-            <h1>heoooo</h1>
-            <div>
-                {
-                    // allBooks.map( book => (
-                    //     <div key={book.bookId} className="card lg:card-side bg-base-100 shadow-xl">
-                    //     <div>
-                    //         <img src={book.image} alt="" />
-                    //     </div>
-                    //     <div className="card-body">
-                    //         <h2 className="card-title">New album is released!</h2>
-                    //         <p>Click the button to listen on Spotiwhy app.</p>
-                    //         <div className="card-actions justify-end">
-                    //         <button className="btn btn-primary">Listen</button>
-                    //         </div>
-                    //     </div>
-                    //     </div>
-                    // ) )
-                }
+  console.log(book, "data");
+  const {
+    authorName,
+    bookName,
+    category,
+    image,
+    tags,
+    rating,
+    publisher,
+    review,
+    totalPages,
+    yearOfPublishing,
+  } = book;
+
+  return (
+    <div>
+      <h1 className="text-center font-bold my-10 md:text-5xl text-3xl ">Book Details</h1>
+      <div>
+        <div className="md:grid grid-cols-2 gap-4">
+
+          <div className="book-details" >
+            <img className="w-60 " src= {image}  alt="" />
+          </div>
+
+          <div>
+
+            <div className="border-b border-gray-400">
+            <h1 className="text-3xl font-bold "> {bookName} </h1>
+            <h1> By : {authorName} </h1>
             </div>
-
+                <h1 className="border-b border-gray-400" > {category} </h1>
+            <div className="border-b border-gray-400">
+                <h1> <span className="font-bold" > Review: </span> {review} </h1>
+                <h1 className="text-green-500 " > <span className="font-bold text-black" > Tag: </span> #{tags[0]} #{tags[1]} </h1>
+            </div>
+            <div>
+                <h1> Number of Page : {totalPages} </h1>
+                <h1> Publisher : {publisher} </h1>
+                <p>Ratings : {rating} </p>
+                <p> Year Of Publishing : {yearOfPublishing} </p>
+            </div>
+                <div>
+                     <Link to = '/listedBooks' > <button className="btn bg-white text-black hover:bg-[#23BE0A] btn-outline " > Read </button> </Link>
+                     <Link to = '/listedBooks' > <button className="btn bg-[#23BE0A] " > Wishlist </button> </Link>
+                </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default BookDetails;

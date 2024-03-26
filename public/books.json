@@ -1,0 +1,172 @@
+[
+    {
+    "bookId": "9781",
+    "bookName": "1984",
+    "authorName": "George Orwell",
+    "image": "https://i.postimg.cc/c4vY4CXz/pngwing-1.png",
+    "review": "A dystopian masterpiece depicting a totalitarian regime.",
+    "totalPages": 328,
+    "rating": 4.7,
+    "category": "Fiction",
+    "tags": [
+    "Dystopian",
+    "Classic",
+    "Politics"
+    ],
+    "publisher": "Signet Classics",
+    "yearOfPublishing": 1949
+    },
+    {
+    "bookId": "9782",
+    "bookName": "The Great Gatsby",
+    "authorName": "F. Scott Fitzgerald",
+    "image": "https://i.postimg.cc/tCmTSHGG/kindpng-81724-1.png",
+    "review": "A classic tale of wealth, love, and the American Dream.",
+    "totalPages": 218,
+    "rating": 4.5,
+    "category": "Fiction",
+    "tags": [
+    "Classic",
+    "American Literature",
+    "1920s"
+    ],
+    "publisher": "Scribner",
+    "yearOfPublishing": 1925
+    },
+    {
+    "bookId": "9783",
+    "bookName": "To Kill a Mockingbird",
+    "authorName": "Harper Lee",
+    "image": "https://i.postimg.cc/X7ySWMyb/kindpng-1064993.png",
+    "review": "A powerful story addressing racial injustice in the American South.",
+    "totalPages": 336,
+    "rating": 4.4,
+    "category": "Fiction",
+    "tags": [
+    "Classic",
+    "American Literature",
+    "Race Relations"
+    ],
+    "publisher": "Harper Perennial Modern Classics",
+    "yearOfPublishing": 1960
+    },
+    {
+    "bookId": "9784",
+    "bookName": "The Catcher in the Rye",
+    "authorName": "J.D. Salinger",
+    "image": "https://i.postimg.cc/brnh34xp/kindpng-2193744-1.png",
+    "review": "A coming-of-age novel capturing the disillusionment of adolescence.",
+    "totalPages": 277,
+    "rating": 4,
+    "category": "Fiction",
+    "tags": [
+    "Classic",
+    "American Literature",
+    "Coming of Age"
+    ],
+    "publisher": "Little, Brown and Company",
+    "yearOfPublishing": 1951
+    },
+    {
+    "bookId": "9785",
+    "bookName": "The Alchemist",
+    "authorName": "Paulo Coelho",
+    "image": "https://i.postimg.cc/ZYv4bv12/kindpng-2592315-1.png",
+    "review": "A fable about following your dreams and fulfilling your destiny.",
+    "totalPages": 197,
+    "rating": 4.2,
+    "category": "Fiction",
+    "tags": [
+    "Fable",
+    "Inspiration",
+    "Philosophy"
+    ],
+    "publisher": "HarperOne",
+    "yearOfPublishing": 1988
+    },
+    {
+    "bookId": "9786",
+    "bookName": "Harry Potter and the Philosopher's Stone",
+    "authorName": "J.K. Rowling",
+    "image": "https://i.postimg.cc/5Nc16NJ0/kindpng-4022054-1.png",
+    "review": "The enchanting beginning to the beloved Harry Potter series.",
+    "totalPages": 320,
+    "rating": 4.8,
+    "category": "Fantasy",
+    "tags": [
+    "Wizardry",
+    "Magic",
+    "Children's Literature"
+    ],
+    "publisher": "Bloomsbury Publishing",
+    "yearOfPublishing": 1997
+    },
+    {
+    "bookId": "9787",
+    "bookName": "The Da Vinci Code",
+    "authorName": "Dan Brown",
+    "image": "https://i.postimg.cc/qv4TxbzH/kindpng-4945926-1.png",
+    "review": "A thrilling mystery that combines art, history, and religion.",
+    "totalPages": 689,
+    "rating": 4.1,
+    "category": "Mystery",
+    "tags": [
+    "Thriller",
+    "Conspiracy",
+    "Art"
+    ],
+    "publisher": "Doubleday",
+    "yearOfPublishing": 2003
+    },
+    {
+    "bookId": "9788",
+    "bookName": "Gone Girl",
+    "authorName": "Gillian Flynn",
+    "image": "https://i.postimg.cc/vHWy9F8v/kindpng-5624060-1.png",
+    "review": "A gripping psychological thriller with unexpected twists.",
+    "totalPages": 432,
+    "rating": 4,
+    "category": "Mystery",
+    "tags": [
+    "Suspense",
+    "Marriage",
+    "Deception"
+    ],
+    "publisher": "Broadway Books",
+    "yearOfPublishing": 2012
+    },
+    {
+    "bookId": "9789",
+    "bookName": "Harry Potter and the Prisoner of Azkaban",
+    "authorName": "J.K. Rowling",
+    "image": "https://i.postimg.cc/x15SxvzJ/kindpng-7318921.png",
+    "review": "Harry Potter faces new challenges and discovers the truth about his past.",
+    "totalPages": 435,
+    "rating": 4.7,
+    "category": "Fantasy",
+    "tags": [
+    "Wizardry",
+    "Magic",
+    "Children's Literature"
+    ],
+    "publisher": "Scholastic",
+    "yearOfPublishing": 1999
+    },
+    {
+    "bookId": "9790",
+    "bookName": "Educated",
+    "authorName": "Tara Westover",
+    "image": "https://i.postimg.cc/brnh34xp/kindpng-2193744-1.png",
+    "review": "A memoir of resilience and self-discovery through education.",
+    "totalPages": 352,
+    "rating": 4.5,
+    "category": "Biography",
+    "tags": [
+    "Memoir",
+    "Education",
+    "Family"
+    ],
+    "publisher": "Random House",
+    "yearOfPublishing": 2018
+    }
+    ]
