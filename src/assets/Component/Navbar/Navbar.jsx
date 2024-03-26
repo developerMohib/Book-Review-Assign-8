@@ -90,12 +90,12 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar shadow-lg bg-slate-400">
+      <div className="navbar shadow-lg bg-slate-400 md:px-10">
         <div className="navbar-start">
           <div className="dropdown text-2xl ml-2 ">
             <div
-              tabIndex={0}
-              role="button"
+              // tabIndex={0}
+              // role="button"
               onClick={() => setOpen(!open)}
               className="lg:hidden"
             >
