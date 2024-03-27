@@ -6,9 +6,7 @@ const BooksPage = () => {
   const [initialBooks, setInitialBooks] = useState(6);
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/developerMohib/Book-Review-JSON-Data-A8/master/Json-For-Book-Data"
-    )
+    fetch('/books.json')
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);
@@ -21,7 +19,7 @@ const BooksPage = () => {
   };
 
   return (
-    <div className="my-10">
+    <div className="my-10" >
       
       <div>
         <h1 className=" text-3xl md:text-5xl font-bold text-center my-10 "> My Books </h1>

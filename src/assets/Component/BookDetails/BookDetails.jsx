@@ -1,14 +1,29 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './BookDetails.css'
+import { SaveToLocalStorage } from "../LocalStorageSet/LocalStorageSet";
 
 const BookDetails = () => {
 
   const bookLoader = useLoaderData();
+  console.log(bookLoader, 'book loader');
   const { bookId } = useParams();
 
   const book = bookLoader?.find((book) => book.bookId == bookId);
 
-  console.log(book, "data");
+  const handleRead = () => {
+    // console.log('read button paici');
+    toast("Wow so easy!");
+    SaveToLocalStorage(book)
+  }
+  const handleWish = () => {
+    toast("Wow so easy! 222 ");
+    
+    console.log('wish button paici');
+  }
+
+  // console.log(book, "data");
   const {
     authorName,
     bookName,
@@ -50,9 +65,11 @@ const BookDetails = () => {
                 <p> Year Of Publishing : {yearOfPublishing} </p>
             </div>
                 <div>
-                     <Link to = '/listedBooks' > <button className="btn bg-white text-black hover:bg-[#23BE0A] btn-outline " > Read </button> </Link>
-                     <Link to = '/listedBooks' > <button className="btn bg-[#23BE0A] " > Wishlist </button> </Link>
+                     <Link  > <button onClick={handleRead} className="btn bg-white text-black hover:bg-[#23BE0A] btn-outline " > Read </button> </Link>
+                     <Link> <button onClick={handleWish} className="btn bg-[#23BE0A] " > Wishlist </button> </Link>
+                     <Link to = '/listedBooks' > <button onClick={handleWish} className="btn bg-[#23BE0A] " > Go Listed Books </button> </Link>
                 </div>
+      <ToastContainer />
           </div>
         </div>
       </div>

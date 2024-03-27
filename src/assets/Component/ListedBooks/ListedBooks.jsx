@@ -1,4 +1,13 @@
+import { useEffect, useState } from "react";
+import { getSaveData } from "../LocalStorageSet/LocalStorageSet";
+
 const ListedBooks = () => {
+
+  const [ book, setBook ] = useState([]);
+  useEffect( ( ) => {
+    setBook(getSaveData)
+  } ,[])
+
   return (
     <div>
       <div className="text-center " >

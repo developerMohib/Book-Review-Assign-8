@@ -90,19 +90,19 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar shadow-lg bg-slate-400 md:px-10">
+      <div className="navbar shadow-lg z-10 bg-inherit md:px-10">
         <div className="navbar-start">
           <div className="dropdown text-2xl ml-2 ">
             <div
-              // tabIndex={0}
-              // role="button"
+              tabIndex={0}
+              role="button"
               onClick={() => setOpen(!open)}
               className="lg:hidden"
             >
               {open === true ? <MdClose /> : <LuMenu />}
             </div>
             <ul
-              //   tabIndex={0}
+                tabIndex={0}
               className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-200 rounded-box w-60  ${
                 open ? " " : "hidden"
               } `}
