@@ -7,7 +7,7 @@ import { SaveToLocalStorage } from "../LocalStorageSet/LocalStorageSet";
 const BookDetails = () => {
 
   const bookLoader = useLoaderData();
-  console.log(bookLoader, 'book loader');
+  // console.log(bookLoader, 'book loader');
   const { bookId } = useParams();
 
   const book = bookLoader?.find((book) => book.bookId == bookId);
