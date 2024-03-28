@@ -8,7 +8,6 @@ const ListedBooks = () => {
 
   const [ book, setBook ] = useState([]);
   const [displyBooks, setDisplayJBooks] = useState([book]);
-  // console.log(jobs, 'all jobs from aplied jobs')
 
   console.log(displyBooks, 'disple bol')
 
@@ -28,9 +27,9 @@ const ListedBooks = () => {
   }
 
   const sortRating = () =>{
-    book.sort((r1, r2) => (r1.rating > r2.rating) ? 1 : (r1.rating < r2.rating) ? -1 : 0)
+    book.sort((r1, r2) => (r1.rating > r2.rating) ? 1 : (r1.rating < r2.rating) ? -1 : 0);
   }
-  console.log(sortRating() ,'soty')  
+  console.log(sortRating() ,'sotty')  
   useEffect( ( ) => {
     setBook(getSaveData())
   } ,[])

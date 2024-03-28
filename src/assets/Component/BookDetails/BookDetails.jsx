@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './BookDetails.css';
 import { SaveToLocalStorage } from "../LocalStorageSet/LocalStorageSet";
 import { useEffect, useState } from "react";
+import { wishLishSaveToLocalStorage } from "../LocalStorageSet/ForWishlishStore";
 
 
 const BookDetails = () => {
@@ -17,31 +18,24 @@ const BookDetails = () => {
     setItems( JSON.parse(localStorage.getItem('readBooks')) ) ;
   } ,[])
 
-
-  // console.log(items, 'gin item hote hbe',book.bookId)
-
   const success = () => {
     toast("Read Succesfully !");
   }
   const already = ( ) => {
-    toast(" Already Added");
+    toast.warning(" Already Added");
   }
   const alreadyRead = ( ) => {
-    toast("Aready Readed");
+    toast.warning("Aready Readed");
   }
-  
-
-
+  const wishLishSuccess = () => {
+    toast("WishList Succesfully !");
+  }
 
   const handleRead = () => {
     const fromLocal = JSON.parse(localStorage.getItem('readBooks'));
-    console.log(fromLocal, 'gorom gorom');
-    const findBook = fromLocal?.find( book => book.bookId == bookId );
-    
+    const findBook = fromLocal?.find( bId => bId.bookId == bookId );
     if(!findBook){
-      // return alreadyRead();
-      return success();
-      
+      success();
     }
     else {
       alreadyRead()
@@ -49,24 +43,26 @@ const BookDetails = () => {
     SaveToLocalStorage(book);
   }
 
-  const handleWish = () => {
-    const findBook = items?.find( book => book.bookId == bookId );
-    console.log(findBook.bookId, 'findBook' );
 
-    if(findBook.bookId == bookId ){
-      return alreadyRead()
-    }
-    else if(findBook){
+  const handleWish = () => {
+    const fromLocal = JSON.parse(localStorage.getItem('readBooks'));
+    const findBook = fromLocal?.find( bId => bId.bookId == bookId );
+console.log(findBook,'find from wishlist')
+    
+    const fromWishListLocal = JSON.parse(localStorage.getItem('wishLishReadBooks'));
+    const findWishListBook = fromWishListLocal?.find( bId => bId.bookId == bookId );
+
+    if(findBook.bookId){
       return already()
+    }
+    else if(!findWishListBook){
+      wishLishSuccess()
     }
     else{
       success()
     }
+    wishLishSaveToLocalStorage(book)
   }
-
-// console.log(items, 'from local store');
-
-
 
   const {
     authorName,

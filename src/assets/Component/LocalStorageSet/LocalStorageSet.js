@@ -1,24 +1,21 @@
-
 const getSaveData = () => {
-    // let getData = JSON.parse(localStorage.getItem('read-books')) || [];
-    const getData = localStorage.getItem('readBooks');
-    if(getData){
-        return JSON.parse(getData)
+    const getData = localStorage.getItem("readBooks");
+    if (getData) {
+      return JSON.parse(getData);
     }
     return [];
-}
-
-const SaveToLocalStorage = (book) => {
+  };
+  
+  const SaveToLocalStorage = (data) => {
     let getData = getSaveData();
-    // let getData = JSON.parse(localStorage.getItem('readBooks')) || [];
-
-    const existingData = getData?.find(book => book.bookId == book.bookId);
-
+  
+    const existingData = getData.find((savedId) => savedId.bookId == data.bookId);
+  
     if (!existingData) {
-        getData.push(book);
-        localStorage.setItem('readBooks', JSON.stringify(getData)); 
+      getData.push(data);
+      localStorage.setItem("readBooks", JSON.stringify(getData));
     }
-}
-
-
-export { SaveToLocalStorage, getSaveData};
+  };
+  
+  export { SaveToLocalStorage, getSaveData };
+  
