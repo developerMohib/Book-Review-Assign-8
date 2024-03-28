@@ -1,29 +1,63 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './BookDetails.css'
+import './BookDetails.css';
 import { SaveToLocalStorage } from "../LocalStorageSet/LocalStorageSet";
+import { useEffect, useState } from "react";
+
 
 const BookDetails = () => {
+  const [items , setItems ] = useState([])
 
   const bookLoader = useLoaderData();
-  // console.log(bookLoader, 'book loader');
   const { bookId } = useParams();
-
   const book = bookLoader?.find((book) => book.bookId == bookId);
 
+  useEffect(() => {
+    setItems( JSON.parse(localStorage.getItem('read-books')) ) ;
+
+  } ,[])
+
   const handleRead = () => {
-    // console.log('read button paici');
-    toast("Wow so easy!");
-    SaveToLocalStorage(book)
-  }
-  const handleWish = () => {
-    toast("Wow so easy! 222 ");
-    
-    console.log('wish button paici');
+
+    const findBook = items?.find( book => book.bookId == bookId );
+    // console.log(findBook, 'findBook');
+    if(findBook){
+      return already()
+    }
+    success()
+    SaveToLocalStorage (book);
   }
 
-  // console.log(book, "data");
+
+const success = () => {
+  toast(" Already Readed !");
+}
+const already = ( ) => {
+  toast(" Already Readed signal vai!");
+}
+const alreadyRead = ( ) => {
+  toast("signal vai!");
+}
+
+  const handleWish = () => {
+    const findBook = items?.find( book => book.bookId == bookId );
+    console.log(findBook.bookId, 'findBook' );
+    if(findBook.bookId == bookId ){
+      return alreadyRead()
+    }
+    else if(findBook){
+      return already()
+    }
+    else{
+      success()
+    }
+  }
+
+// console.log(items, 'from local store');
+
+
+
   const {
     authorName,
     bookName,
@@ -65,8 +99,8 @@ const BookDetails = () => {
                 <p> Year Of Publishing : {yearOfPublishing} </p>
             </div>
                 <div>
-                     <Link  > <button onClick={handleRead} className="btn bg-white text-black hover:bg-[#23BE0A] btn-outline " > Read </button> </Link>
-                     <Link> <button onClick={handleWish} className="btn bg-[#23BE0A] " > Wishlist </button> </Link>
+                     <Link> <button onClick={handleRead} className="btn bg-white text-black hover:bg-[#23BE0A] btn-outline " > Read </button> </Link>
+                     <Link > <button onClick={handleWish} className="btn bg-[#23BE0A] " > Wishlist </button> </Link>
                      <Link to = '/listedBooks' > <button onClick={handleWish} className="btn bg-[#23BE0A] " > Go Listed Books </button> </Link>
                 </div>
       <ToastContainer />
