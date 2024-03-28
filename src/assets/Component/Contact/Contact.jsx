@@ -19,9 +19,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can handle form submission here, such as sending the data to a server
     console.log(formData);
-    // Reset form fields after submission
     setFormData({
       name: '',
       email: '',

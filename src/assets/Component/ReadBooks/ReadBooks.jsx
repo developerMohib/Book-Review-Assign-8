@@ -17,22 +17,10 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 const ReadBooks = () => {
-	// const books = useLoaderData();
 
 	const getLocalReadBookId = JSON.parse( localStorage.getItem('readBooks') ) ;
 
-	// const [readBooks, setReadBooks] = useState([]);
-	// useEffect(() => {
-	// 	const readBooksVar = [];
-	// 	for (const id of getLocalReadBookId) {
-	// 		for (const book of books) {
-	// 			if (book.bookId == id) {
-	// 				readBooksVar.push(book);
-	// 			}
-	// 		}
-	// 	}
-	// 	setReadBooks(readBooksVar);
-	// }, [books]);
+
     console.log(getLocalReadBookId , 'chart');
 
 	const getPath = (x, y, width, height) => {

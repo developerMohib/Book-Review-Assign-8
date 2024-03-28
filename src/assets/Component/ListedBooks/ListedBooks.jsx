@@ -34,8 +34,6 @@ const ListedBooks = () => {
     setBook(getSaveData())
   } ,[])
 
-  // console.log(book, 'book from local storage');
-
   return (
     <div>
       
