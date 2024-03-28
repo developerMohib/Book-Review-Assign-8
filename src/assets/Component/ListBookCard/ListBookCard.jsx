@@ -27,7 +27,7 @@ const ListBookCard = ( {item} ) => {
               <h2 className="card-title"> {bookName} </h2>
               <p> By: {authorName} </p>
 
-              <div className='flex justify-start' >
+              <div className='md:flex justify-start' >
                 <p> <span className="font-semibold text-xl"> Tag </span>: {tags[0]} {tags[1]} </p>
               <p>
                 Year Of Publishing : {yearOfPublishing}

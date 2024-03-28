@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <div>
       <div>
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero md:min-h-screen bg-base-200">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div>
             <img src='https://i.postimg.cc/c4vY4CXz/pngwing-1.png' border='0' alt='pngwing-1'/>

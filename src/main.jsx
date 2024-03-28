@@ -16,7 +16,6 @@ import ReadBooks from './assets/Component/ReadBooks/ReadBooks.jsx';
 import About from './assets/Component/About/About.jsx';
 import Contact from './assets/Component/Contact/Contact.jsx';
 import BookDetails from './assets/Component/BookDetails/BookDetails.jsx';
-import TabReadBook from './assets/Component/ListedBooks/TabReadBook/TabReadBook.jsx';
 import TabWishlist from './assets/Component/ListedBooks/TabWishlist/TabWishlist.jsx';
 
 
@@ -32,18 +31,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/listedBooks",
-        element: <ListedBooks> </ListedBooks>,
+
         children: [
           {
             index: true,
-            element: <TabReadBook> </TabReadBook>
+            element: <ListedBooks> </ListedBooks>,
           },
           {
-            index: 'listedBooks/:wishListBooks',
+            path: 'wishListBooks',
             element: <TabWishlist> </TabWishlist>
           }
         ]
       },
+
       {
         path: "/readBooks",
         element: <ReadBooks> </ReadBooks> ,

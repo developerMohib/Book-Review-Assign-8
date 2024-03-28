@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
+import { TailSpin } from "react-loader-spinner";
 
 const Blogs = () => {
   const [bookBlog, setBookBlog] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch(
       "https://raw.githubusercontent.com/developerMohib/Blog-Book-Review-Json/master/NewTextDocument.txt"
     )
       .then((res) => res.json())
       .then((data) => setBookBlog(data));
+      setLoading(false);
   }, []);
   console.log(bookBlog, "from blog page");
 
