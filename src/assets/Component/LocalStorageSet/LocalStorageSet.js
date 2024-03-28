@@ -1,21 +1,22 @@
-import { toast } from "react-toastify";
 
 const getSaveData = () => {
-    let getData = JSON.parse(localStorage.getItem('read-books')) || [];
-    return getData;
+    // let getData = JSON.parse(localStorage.getItem('read-books')) || [];
+    const getData = localStorage.getItem('readBooks');
+    if(getData){
+        return JSON.parse(getData)
+    }
+    return [];
 }
 
-const SaveToLocalStorage = (data) => {
-    let saveData = JSON.parse(localStorage.getItem('read-books')) || [];
+const SaveToLocalStorage = (book) => {
+    let getData = getSaveData();
+    // let getData = JSON.parse(localStorage.getItem('readBooks')) || [];
 
-    const existingData = saveData.find(book => book.bookId == data.bookId);
-    // console.log(data , 'paramiter data');
+    const existingData = getData?.find(book => book.bookId == book.bookId);
 
     if (!existingData) {
-        saveData.push(data);
-        localStorage.setItem('read-books', JSON.stringify(saveData)); 
-    } else {
-        // return toast ("already added from local set js!");
+        getData.push(book);
+        localStorage.setItem('readBooks', JSON.stringify(getData)); 
     }
 }
 

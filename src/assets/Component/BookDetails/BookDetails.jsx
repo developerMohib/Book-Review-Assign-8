@@ -7,42 +7,52 @@ import { useEffect, useState } from "react";
 
 
 const BookDetails = () => {
-  const [items , setItems ] = useState([])
-
+  const [items , setItems ] = useState([ ])
   const bookLoader = useLoaderData();
   const { bookId } = useParams();
-  const book = bookLoader?.find((book) => book.bookId == bookId);
+  
+  const book = bookLoader?.find((book) =>(book.bookId) == bookId );
 
   useEffect(() => {
-    setItems( JSON.parse(localStorage.getItem('read-books')) ) ;
-
+    setItems( JSON.parse(localStorage.getItem('readBooks')) ) ;
   } ,[])
 
-  const handleRead = () => {
 
-    const findBook = items?.find( book => book.bookId == bookId );
-    // console.log(findBook, 'findBook');
-    if(findBook){
-      return already()
-    }
-    success()
-    SaveToLocalStorage (book);
+  // console.log(items, 'gin item hote hbe',book.bookId)
+
+  const success = () => {
+    toast("Read Succesfully !");
   }
+  const already = ( ) => {
+    toast(" Already Added");
+  }
+  const alreadyRead = ( ) => {
+    toast("Aready Readed");
+  }
+  
 
 
-const success = () => {
-  toast(" Already Readed !");
-}
-const already = ( ) => {
-  toast(" Already Readed signal vai!");
-}
-const alreadyRead = ( ) => {
-  toast("signal vai!");
-}
+
+  const handleRead = () => {
+    const fromLocal = JSON.parse(localStorage.getItem('readBooks'));
+    console.log(fromLocal, 'gorom gorom');
+    const findBook = fromLocal?.find( book => book.bookId == bookId );
+    
+    if(!findBook){
+      // return alreadyRead();
+      return success();
+      
+    }
+    else {
+      alreadyRead()
+    }
+    SaveToLocalStorage(book);
+  }
 
   const handleWish = () => {
     const findBook = items?.find( book => book.bookId == bookId );
     console.log(findBook.bookId, 'findBook' );
+
     if(findBook.bookId == bookId ){
       return alreadyRead()
     }

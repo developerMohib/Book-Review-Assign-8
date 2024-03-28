@@ -7,14 +7,15 @@ const BookCard = ({ book }) => {
   return (
     <div>
       <div>
+      <Link to= {`books/${bookId}`} > 
         <div className="card bg-base-100 shadow-xl md:p-10 p-3 border border-gray-400 my-3 ">
           <figure>
-            <Link to= {`/books/${bookId}`} > 
+            {/* <Link to= {`/books/${bookId}`} >  */}
             <img
               src={image}
               alt="Book"
             />
-            </Link>
+            {/* </Link> */}
           </figure>
           <div className="card-body p-3 ">
             <div className="flex justify-around" >
@@ -32,6 +33,7 @@ const BookCard = ({ book }) => {
             </div>
           </div>
         </div>
+        </Link>
       </div>
     </div>
   );
