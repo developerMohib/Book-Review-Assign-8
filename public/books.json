@@ -168,5 +168,39 @@
     ],
     "publisher": "Random House",
     "yearOfPublishing": 2018
+    },
+    {
+    "bookId": 9791,
+    "bookName": "Educated",
+    "authorName": "Tara Westover",
+    "image": "https://i.postimg.cc/brnh34xp/kindpng-2193744-1.png",
+    "review": "A memoir of resilience and self-discovery through education.",
+    "totalPages": 352,
+    "rating": 4.5,
+    "category": "Biography",
+    "tags": [
+    "Memoir",
+    "Education",
+    "Family"
+    ],
+    "publisher": "Random House",
+    "yearOfPublishing": 2018
+    },
+    {
+    "bookId": 9792,
+    "bookName": "Gone Girl",
+    "authorName": "Gillian Flynn",
+    "image": "https://i.postimg.cc/vHWy9F8v/kindpng-5624060-1.png",
+    "review": "A gripping psychological thriller with unexpected twists.",
+    "totalPages": 432,
+    "rating": 4,
+    "category": "Mystery",
+    "tags": [
+    "Suspense",
+    "Marriage",
+    "Deception"
+    ],
+    "publisher": "Broadway Books",
+    "yearOfPublishing": 2012
     }
     ]

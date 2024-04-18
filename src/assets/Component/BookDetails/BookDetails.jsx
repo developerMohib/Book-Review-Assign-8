@@ -9,6 +9,8 @@ import { wishLishSaveToLocalStorage } from "../LocalStorageSet/ForWishlishStore"
 const BookDetails = () => {
   const [items, setItems] = useState([]);
   const bookLoader = useLoaderData();
+  // console.log(bookLoader, 'bookloader')
+  
   const { bookId } = useParams();
 
   const book = bookLoader?.find((book) => book.bookId == bookId);

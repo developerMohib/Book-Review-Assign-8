@@ -32,7 +32,7 @@ const BooksPage = () => {
           </BookCard>
         ))}
       </div>
-      <div className={initialBooks === books.length && "hidden"}>
+      <div className={` ${initialBooks === books.length && "hidden"} `}>
         <div className="text-center">
           <button
             onClick={handleBookLength}

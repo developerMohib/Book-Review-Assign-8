@@ -1,16 +1,11 @@
 
-
 const TabWishlist = () => {
-    
     const getItemFromWishLish = localStorage.getItem('wishLishReadBooks');
     const parsGetItem = JSON.parse(getItemFromWishLish);
     console.log(parsGetItem, 'pases ase ')
-
-
     return (
         <div>
-      <div>
-
+      <div className="testiddd" >
         {
             parsGetItem?.map(item => (
 

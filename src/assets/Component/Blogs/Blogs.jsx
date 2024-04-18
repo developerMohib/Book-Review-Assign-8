@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 const Blogs = () => {
   const [bookBlog, setBookBlog] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [blogLen, setBlogLen] = useState(4);
 
   useEffect(() => {
     setLoading(true);
@@ -14,13 +15,13 @@ const Blogs = () => {
       .then((data) => setBookBlog(data));
       setLoading(false);
   }, []);
-  console.log(bookBlog, "from blog page");
+  console.log(bookBlog,loading, "from blog page");
 
   return (
     <div>
       <div className="md:grid grid-cols-4 gap-5 my-5">
-        {bookBlog?.map((bblog) => (
-          <div key={bblog.blogId}>
+        {bookBlog?.slice(0, blogLen).map((bblog) => (
+          <div key={bblog.blogId} className=" flex flex-grow" >
             <div className="card bg-base-100 shadow-xl">
               <figure>
                 <img
@@ -39,6 +40,9 @@ const Blogs = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className={`my-10 text-center ${blogLen == bookBlog.length && 'hidden' } `} >
+        <button onClick={ () => setBlogLen(bookBlog.length) } className="btn btn-outline" > load more </button>
       </div>
     </div>
   );

@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 const BookCard = ({ book }) => {
   const { bookId, bookName, authorName, category, tags, rating, image } = book;
+  
   return (
-    <div>
-      <div>
-      <Link to= {`books/${bookId}`} > 
+    <div >
+      <div >
+      <Link to= {`books/${bookId}`}  > 
         <div className="card bg-base-100 shadow-xl md:p-10 p-3 border border-gray-400 my-3 ">
           <figure>
             <img
