@@ -17,6 +17,7 @@ import About from './assets/Component/About/About.jsx';
 import Contact from './assets/Component/Contact/Contact.jsx';
 import BookDetails from './assets/Component/BookDetails/BookDetails.jsx';
 import TabWishlist from './assets/Component/ListedBooks/TabWishlist/TabWishlist.jsx';
+import BuyBook from './assets/Component/BuyBook/BuyBook.jsx';
 
 
 const router = createBrowserRouter([
@@ -37,7 +38,12 @@ const router = createBrowserRouter([
             element: <ListedBooks> </ListedBooks>,
           },
           {
-            path: 'wishListBooks',
+            path:'books/:bookId',
+            loader: () => fetch('/books.json') ,
+            element: <BuyBook> </BuyBook>,
+          },
+          {
+            path: "wishListBooks" , 
             element: <TabWishlist> </TabWishlist>
           }
         ]
@@ -63,7 +69,6 @@ const router = createBrowserRouter([
         path:'books/:bookId',
         loader: () => fetch('/books.json') ,
         element: <BookDetails> </BookDetails>,
-        
       }
     ],
   },

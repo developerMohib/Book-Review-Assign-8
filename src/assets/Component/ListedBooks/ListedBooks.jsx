@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getSaveData } from "../LocalStorageSet/LocalStorageSet";
 import ListBookCard from "../ListBookCard/ListBookCard";
 import Tabs from "./Tab/Tabs";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
 
@@ -49,12 +49,11 @@ const ListedBooks = () => {
           <option onClick={() => handleFiter()} >Publisher year</option>
         </select>
       </div>
-      <Tabs> </Tabs>
-      <Outlet> </Outlet>
       {/* Tabs Here */}
+      <Tabs></Tabs>
 
       {
-      book.map(item => <ListBookCard key={item.bookId} item = {item} > </ListBookCard> )
+      book?.map(item => <ListBookCard key={item.bookId} item = {item} > </ListBookCard> )
       }
     </div>
   );

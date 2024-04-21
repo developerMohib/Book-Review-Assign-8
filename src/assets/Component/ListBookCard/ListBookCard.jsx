@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ListBookCard = ( {item} ) => {
     const {
@@ -11,6 +12,7 @@ const ListBookCard = ( {item} ) => {
         publisher,
         totalPages,
         yearOfPublishing,
+        bookId
       } = item; 
   return (
     <div>
@@ -57,7 +59,10 @@ const ListBookCard = ( {item} ) => {
                   ratings {rating}
                 </span>
               </p>
-              <button className="btn btn-outline rounded-full"> View Details </button>
+              
+              <Link to= {`books/${bookId}`} >
+              <button className="btn btn-outline rounded-full"> View Details </button> 
+              </Link>
             </div>
           </div>
         </div>
