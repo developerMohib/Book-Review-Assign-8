@@ -1,9 +1,6 @@
-# User-Book-Review
+## User-Book-Review
 
-## [ live link ](https://user-book-review.netlify.app/) : https://user-book-review.netlify.app/
-
-
-## [ Private Repo Link](https://github.com/programming-hero-web-course-4/b9a8-book-vibe-developerMohib) : https://github.com/programming-hero-web-course-4/b9a8-book-vibe-developerMohib
+- ## [ live link ](https://user-book-review.netlify.app/) : https://user-book-review.netlify.app
 
 About the site 
 - Book review website offers user reviews and ratings for diverse perspectives.
