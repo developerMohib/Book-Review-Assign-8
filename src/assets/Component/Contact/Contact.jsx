@@ -7,8 +7,10 @@ const Contact = () => {
     password: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
+    // setLoading(true)
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -17,6 +19,7 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
+    setLoading(true)
     e.preventDefault();
     console.log(formData);
     setFormData({
@@ -25,10 +28,11 @@ const Contact = () => {
       password: "",
       message: "",
     });
+    setLoading(false)
   };
 
   return (
-    <div className="w-[90%] bg-base-300 mx-auto p-3 rounded-md">
+    <div className="w-[90%] bg-base-300 mx-auto p-8 md:my-2 rounded-md">
       <h2 className="text-sm text-center font-semibold">Contact Us</h2>
       <h2 className="text-3xl text-center font-semibold my-8">Make an Appointment</h2>
       <form onSubmit={handleSubmit}>
@@ -69,7 +73,7 @@ const Contact = () => {
             required
           />
         </div>
-        <button className="w-full bg-green-500 p-2 rounded-lg mt-4 hover:bg-green-400 " type="submit"> Submit </button>
+        <button className="w-full bg-green-500 p-2 rounded-lg mt-4 hover:bg-green-400 " type="submit"> {loading ? 'wait vai' : 'Submit'} </button>
       </form>
     </div>
   );

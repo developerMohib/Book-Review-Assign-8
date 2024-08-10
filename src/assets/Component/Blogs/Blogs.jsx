@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import { ImSpinner9 } from "react-icons/im";
 
 const Blogs = () => {
   const [bookBlog, setBookBlog] = useState([]);
@@ -15,7 +15,13 @@ const Blogs = () => {
       .then((data) => setBookBlog(data));
     setLoading(false);
   }, []);
-  // console.log(bookBlog, loading, "from blog page");
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center ">
+        <ImSpinner9 className="animate-spin text-4xl " />
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -47,8 +53,7 @@ const Blogs = () => {
           onClick={() => setBlogLen(bookBlog.length)}
           className="btn btn-outline"
         >
-          {" "}
-          load more{" "}
+          {loading ? <ImSpinner9 className="animate-spin" /> : "Load More"}
         </button>
       </div>
     </div>
