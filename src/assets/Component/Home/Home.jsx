@@ -1,14 +1,13 @@
-
-import Banner from '../Banner/Banner';
-import BooksPage from '../BooksPage/BooksPage';
+import Banner from "../Banner/Banner";
+import BooksPage from "../BooksPage/BooksPage";
 
 const Home = () => {
-    return (
-        <div>
-            <Banner> </Banner>
-            <BooksPage> </BooksPage>
-        </div>
-    );
+  return (
+    <div>
+      <Banner> </Banner>
+      <BooksPage> </BooksPage>
+    </div>
+  );
 };
 
 export default Home;

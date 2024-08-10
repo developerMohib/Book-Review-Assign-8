@@ -1,19 +1,18 @@
-import { useState } from 'react';
-
+import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    message: ''
+    name: "",
+    email: "",
+    password: "",
+    message: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -21,53 +20,48 @@ const Contact = () => {
     e.preventDefault();
     console.log(formData);
     setFormData({
-      name: '',
-      email: '',
-      password: '',
-      message: ''
+      name: "",
+      email: "",
+      password: "",
+      message: "",
     });
   };
 
   return (
-    <div>
-      <h2>Contact Us</h2>
+    <div className="w-[90%] bg-base-300 mx-auto p-3 rounded-md">
+      <h2 className="text-sm text-center font-semibold">Contact Us</h2>
+      <h2 className="text-3xl text-center font-semibold my-8">Make an Appointment</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+        <div className="md:flex gap-3 ">
+          <div className="w-1/2">
+            <label htmlFor="name">Name:</label>
+            <input
+            className="w-full p-2 rounded-lg"
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="w-1/2">
+            <label htmlFor="email">Email:</label>
+            <input
+            className="w-full p-2 rounded-lg"
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
+        <div className="w-full">
           <label htmlFor="message">Message:</label>
           <textarea
+          className="w-full p-4 rounded-lg"
             id="message"
             name="message"
             value={formData.message}
@@ -75,11 +69,10 @@ const Contact = () => {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button className="w-full bg-green-500 p-2 rounded-lg mt-4 hover:bg-green-400 " type="submit"> Submit </button>
       </form>
     </div>
   );
-}
-
+};
 
 export default Contact;

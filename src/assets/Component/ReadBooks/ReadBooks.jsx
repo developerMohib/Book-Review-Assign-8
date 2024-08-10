@@ -9,7 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-// import PropTypes from 'prop-types';
+
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
 const ReadBooks = () => {
@@ -27,12 +27,13 @@ C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${
 Z`;
   };
 
-const TriangleBar = (props) => {
+  const TriangleBar = (props) => {
     const { fill, x, y, width, height } = props;
 
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
   };
   return (
+    <>
     <ResponsiveContainer width={"100%"} height={400}>
       <BarChart
         data={getLocalReadBookId}
@@ -60,9 +61,7 @@ const TriangleBar = (props) => {
         </Bar>
       </BarChart>
     </ResponsiveContainer>
+    </>
   );
 };
-// TriangleBar.propTypes = {
-//     props: PropTypes.object,
-// };
 export default ReadBooks;

@@ -5,11 +5,11 @@ import Navbar from "../Navbar/Navbar";
 const Root = () => {
   return (
     <div>
-        <Navbar> </Navbar>
+      <Navbar />
       <div className="px-10">
-        <Outlet> </Outlet>
+        <Outlet />
       </div>
-      <Footer> </Footer>
+      <Footer />
     </div>
   );
 };

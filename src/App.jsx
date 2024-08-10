@@ -1,14 +1,14 @@
-
-import './App.css'
-import Root from './assets/Component/Root/Root'
-
+import "./App.css";
+import Root from "./assets/Component/Root/Root";
+import { HelmetProvider } from 'react-helmet-async';
 function App() {
-
   return (
     <>
-      <Root> </Root>
+      <HelmetProvider>
+        <Root> </Root>
+      </HelmetProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
